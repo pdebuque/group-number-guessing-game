@@ -55,7 +55,7 @@ app.post('/reset', (req, res) => {
   // choose a new magic number
   magicNum = randomNumGen(Number(req.body.newMin), Number(req.body.newMax));
   console.log('new magicNum: ', magicNum);
-  res.send(200);
+  res.sendStatus(200);
 }
 )
 

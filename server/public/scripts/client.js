@@ -70,7 +70,7 @@ function renderDisplay(array) {
           <div class="p1-guess">
             guess: ${round.player1} 
           </div>
-          <div class="p1-diff">
+          <div class="diff p1-diff">
           ${parseDiff(round.p1diff)}
           </div>
         </div>
@@ -79,7 +79,7 @@ function renderDisplay(array) {
           <div class="p2-guess">
             guess: ${round.player2}
           </div>
-          <div class="p2-diff">
+          <div class="diff p2-diff">
             ${parseDiff(round.p2diff)}
           </div>
         </div>
@@ -88,7 +88,7 @@ function renderDisplay(array) {
           <div class="bot-guess">
             guess: ${round.numBot}
           </div>
-          <div class="bot-diff">
+          <div class="diff bot-diff">
             ${parseDiff(round.botdiff)}
           </div>
         </div>
@@ -109,8 +109,8 @@ function renderDisplay(array) {
   }
 
 
-
-  $('#guess-counter').text(array.length)
+  $('#guess-counter').removeClass('number-change').addClass('number-change');
+  $('#guess-counter').text(array.length);
 
   // logic to interpret p1diff and p2diff
   // diff = 0 => same number. correct guess
@@ -123,22 +123,32 @@ function renderDisplay(array) {
 
 function parseDiff(diff) {
   if (diff === 0) {
-    return 'Your guess was correct!'
+    return 'You got it!'
   } else if (diff < 0) {
-    return 'Your guess was too low'
+    return 'Too low!'
   } else {
-    return 'Your guess was too high'
+    return 'Too high!'
   }
 
 }
 
 function resetGame() {
+  let minFromInput;
+  let maxFromInput;
+  if (!$('#new-min').val() || !$('#new-max').val()) {
+    minFromInput = 1;
+    maxFromInput = 25;
+  } else {
+    minFromInput = $('#new-min').val();
+    maxFromInput = $('#new-max').val();
+  }
+
   $.ajax({
     type: 'POST',
     url: 'reset',
     data: {
-      newMin: $('#new-min').val(),
-      newMax: $('#new-max').val()
+      newMin: minFromInput,
+      newMax: maxFromInput
     }
   }).then((res) => {
     renderDisplay()

@@ -21,13 +21,14 @@
   <main id="all-content">
     <h1>ABDI AND PAOLO'S MAGICAL NUMBER GUESSER EXTRAORDINAIRE</h1>
     <section id="celebrate" class="hidden"></section>
-    <p>Guess counter: <span id="guess-counter">0</span></p>
+
     <section id='guess-inputs'>
       <div id="both-players">
         <div id="player-1">
           <label for="player-1-input">Player 1</label>
           <input type="text" id="player-1-input"></input>
         </div>
+        VS.
         <div id="player-2">
           <label for="player-2-input">Player 2</label>
           <input type="text" id="player-2-input"></input>
@@ -36,15 +37,16 @@
       </div>
       <button id="submit-guesses" class="submit-btn">submit guesses</button>
     </section>
-
+    <p>Guess counter: <span id="guess-counter" class="number-change">0</span></p>
     <section id="display-container">
       <div id="guess-list">
 
       </div>
     </section>
     <section id="reset-container">
-      <input id="new-min"> Minimum
-      <input id="new-max"> Maximum
+      <h2>New game?</h2>
+      <input id="new-min" placeholder="if empty, 1"> Minimum
+      <input id="new-max" placeholder="if empty, 25"> Maximum
       <button id="reset">reset game</button>
     </section>
   </main>

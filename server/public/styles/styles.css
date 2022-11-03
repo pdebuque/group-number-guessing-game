@@ -1,6 +1,6 @@
 body {
     font-family: 'Libre Franklin', sans-serif;
-    background-color: black;
+    background-image: url(https://img.freepik.com/premium-photo/defocused-slot-machines-glow-casino-las-vegas-usa-illuminated-neon-gambling-slots_333216-10.jpg?w=2000);
 }
 
 
@@ -27,13 +27,13 @@ body {
 
 h1 {
     font-family: 'Fraunces', serif;
+    text-decoration: underline;
 }
 
 #celebrate {
-    font-size: 30px;
-    color: rgb(106, 34, 34);
-    text-shadow:
-        0 0 7px #fff,
+    font-size: 50px;
+    color: rgb(21, 75, 38);
+    text-shadow: 0 0 7px #fff,
         0 0 10px #fff,
         0 0 21px #fff,
         0 0 42px #0fa,
@@ -65,23 +65,64 @@ h1 {
 
 #player-1 {
     display: inline-block;
+    margin: 5px 20px;
+}
+
+#player-1-input {
+    width: 30px;
+}
+
+#player-2-input {
+    width: 30px;
 }
 
 #player-2 {
     display: inline-block;
+    margin: 5px 20px;
 }
 
 #submit-guesses {
-    background-color: rgb(184, 63, 63);
+    background-color: rgb(100, 25, 25);
+    color: white;
     border: none;
     font-size: 20px;
     margin: 4px;
+    padding: 4px 10px;
+    border-radius: 6px;
 }
 
+#submit-guesses:hover {
+    background-color: rgb(154, 54, 54);
+    cursor: pointer;
+}
+
+#submit-guesses:active:not(:disabled) {
+    transform: scale(.95)
+}
+
+#submit-guesses:disabled {
+    cursor: default;
+    background-color: grey;
+}
+
+.number-change {
+    animation: change 1s 1;
+}
+
+@keyframes change {
+    0% {
+        transform: scaleY(0)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}
 
 /* -------------- guess display -------------- */
 #display-container {
-    height: 400px;
+    min-height: 100px;
+    max-height: 400px;
     overflow-y: scroll;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -90,6 +131,7 @@ h1 {
 
 .round-number {
     background-color: rgb(249, 255, 214);
+    padding: 60px 4px 4px 4px;
     margin: 2px;
 }
 
@@ -119,12 +161,49 @@ h1 {
     background-color: rgb(209, 253, 223);
 }
 
+.diff {
+    margin-top: 20px;
+    font-style: italic;
+}
+
 #guess-list h2 {
     font-weight: 700;
     font-size: 16px;
 }
 
+/* -------------- reset container --------------- */
+
 #reset-container {
     display: flex;
     flex-direction: column;
+    width: 200px;
+    margin: auto;
+    /* border: 2px solid green; */
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgba(152, 130, 69, 0.291)
+}
+
+#reset-container h2 {
+    font-family: "Fraunces", serif;
+    margin: 0 0 10px 0;
+}
+
+#reset {
+    background-color: rgb(100, 25, 25);
+    color: white;
+    border: none;
+    font-size: 20px;
+    margin: 4px;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+#reset:hover {
+    background-color: rgb(154, 54, 54);
+    cursor: pointer;
+}
+
+#reset:active {
+    transform: scale(.95)
 }
