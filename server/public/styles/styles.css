@@ -1,0 +1,130 @@
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: black;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.not-hidden {
+    border: red;
+}
+
+#all-content {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    background-color: blanchedalmond;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* --------------- heading ------------- */
+
+h1 {
+    font-family: 'Fraunces', serif;
+}
+
+#celebrate {
+    font-size: 30px;
+    color: rgb(106, 34, 34);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translate(0px, -10px)
+    }
+
+    50% {
+        transform: translate(0)
+    }
+}
+
+.round-data {
+    display: flex;
+
+}
+
+/* -------------- player inputs ------------ */
+
+#player-1 {
+    display: inline-block;
+}
+
+#player-2 {
+    display: inline-block;
+}
+
+#submit-guesses {
+    background-color: rgb(184, 63, 63);
+    border: none;
+    font-size: 20px;
+    margin: 4px;
+}
+
+
+/* -------------- guess display -------------- */
+#display-container {
+    height: 400px;
+    overflow-y: scroll;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px
+}
+
+.round-number {
+    background-color: rgb(249, 255, 214);
+    margin: 2px;
+}
+
+.round-num {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.p1-data,
+.p2-data,
+.bot-data {
+    padding: 5px 15px;
+    text-align: center;
+    margin: 2px;
+    width: 30%;
+}
+
+.p1-data {
+    background-color: rgb(214, 214, 255)
+}
+
+.p2-data {
+    background-color: rgb(253, 209, 209);
+}
+
+.bot-data {
+    background-color: rgb(209, 253, 223);
+}
+
+#guess-list h2 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#reset-container {
+    display: flex;
+    flex-direction: column;
+}

@@ -8,28 +8,46 @@
   <title>Guess A Number!</title>
   <script src="vendors/jquery.min.js"></script>
   <script src="scripts/client.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,700&family=Libre+Franklin:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-  <h1>YOUR GAME HERE!</h1>
+  <main id="all-content">
+    <h1>ABDI AND PAOLO'S MAGICAL NUMBER GUESSER EXTRAORDINAIRE</h1>
+    <section id="celebrate" class="hidden"></section>
+    <p>Guess counter: <span id="guess-counter">0</span></p>
+    <section id='guess-inputs'>
+      <div id="both-players">
+        <div id="player-1">
+          <label for="player-1-input">Player 1</label>
+          <input type="text" id="player-1-input"></input>
+        </div>
+        <div id="player-2">
+          <label for="player-2-input">Player 2</label>
+          <input type="text" id="player-2-input"></input>
+
+        </div>
+      </div>
+      <button id="submit-guesses" class="submit-btn">submit guesses</button>
+    </section>
+
+    <section id="display-container">
+      <div id="guess-list">
+
+      </div>
+    </section>
+    <section id="reset-container">
+      <input id="new-min"> Minimum
+      <input id="new-max"> Maximum
+      <button id="reset">reset game</button>
+    </section>
+  </main>
 </body>
-<section id='guess-inputs'>
-  <div id="player-1">
-    <label for="player-1-input">Player 1</label>
-    <input type="text" id="player-1-input"></input>
-  </div>
-  <div id="player-2">
-    <label for="player-2-input">Player 2</label>
-    <input type="text" id="player-2-input"></input>
-
-  </div>
-  <button id="submit-guesses" class="submit-btn">submit guesses</button>
-</section>
-
-<section id="display">
-
-</section>
 
 </html>
